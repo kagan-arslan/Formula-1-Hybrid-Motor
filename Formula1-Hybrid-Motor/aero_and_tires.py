@@ -1,7 +1,7 @@
 import numpy as np
 
 class Aerodynamics:
-    def _init_(self, drag_coefficient, downforce_coefficient, vehicle_weight):
+    def __init__(self, drag_coefficient, downforce_coefficient, vehicle_weight):
         self.drag_coefficient = drag_coefficient  # Hava sürükleme katsayısı
         self.downforce_coefficient = downforce_coefficient  # Downforce katsayısı
         self.vehicle_weight = vehicle_weight  # Araç ağırlığı (kg)
@@ -19,7 +19,7 @@ class Aerodynamics:
         return downforce
 
 class Tires:
-    def _init_(self, max_grip, tire_diameter):
+    def __init__(self, max_grip, tire_diameter):
         self.max_grip = max_grip  # Maksimum lastik tutuşu (N)
         self.tire_diameter = tire_diameter  # Lastik çapı (m)
 

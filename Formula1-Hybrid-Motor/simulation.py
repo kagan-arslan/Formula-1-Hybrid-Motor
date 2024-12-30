@@ -1,11 +1,11 @@
-[00:03, 31.12.2024] Kağan Yusuf Arslan: import numpy as np
+import numpy as np
 import matplotlib.pyplot as plt
 from motor_model import HybridMotor
 from energy_recovery import EnergyRecovery
 from aero_and_tires import Aerodynamics, Tires
 
 class F1Simulation:
-    def _init_(self, motor, recovery_system, aero_system, tire_system):
+    def __init__(self, motor, recovery_system, aero_system, tire_system):
         self.motor = motor
         self.recovery_system = recovery_system
         self.aero_system = aero_system
@@ -56,8 +56,8 @@ class F1Simulation:
         plt.show()
 
 # Parametreler
-rpm_range_ice = (np.arange(1000, 12000, 1000), np.arange(50, 450, 50))  # İçten yanmalı motor aralığı
-rpm_range_electric = (np.arange(1000, 12000, 1000), np.arange(100, 300, 25))  # Elektrikli motor aralığı
+rpm_range_ice = (np.linspace(1000, 12000, 8), np.linspace(50, 450, 8))  # İçten yanmalı motor aralığı
+rpm_range_electric = (np.linspace(1000, 12000, 8), np.linspace(100, 300, 8))  # Elektrikli motor aralığı
 
 # Hibrid Motor, Enerji Sistemi, Aerodinamik ve Lastik Sistemleri
 hybrid_motor = HybridMotor(max_torque_ice=500, max_torque_electric=250, max_power_ice=700, max_power_electric=350, rpm_range_ice=rpm_range_ice, rpm_range_electric=rpm_range_electric)
@@ -69,4 +69,3 @@ tire_system = Tires(max_grip=1000, tire_diameter=0.7)
 sim = F1Simulation(hybrid_motor, energy_system, aero_system, tire_system)
 sim.run_simulation()
 sim.plot_results()
-[00:08, 31.12.2024] Kağan Yusuf Arslan: 

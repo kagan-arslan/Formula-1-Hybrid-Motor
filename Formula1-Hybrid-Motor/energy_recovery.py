@@ -1,7 +1,7 @@
 import numpy as np
 
 class EnergyRecovery:
-    def _init_(self, efficiency, battery_capacity, regen_factor, discharge_rate):
+    def __init__(self, efficiency, battery_capacity, regen_factor, discharge_rate):
         self.efficiency = efficiency  # Enerji geri kazanım verimliliği
         self.battery_capacity = battery_capacity  # Batarya kapasitesi (kWh)
         self.regen_factor = regen_factor  # Geri kazanım faktörü

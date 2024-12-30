@@ -1,7 +1,7 @@
 import numpy as np
 
 class HybridMotor:
-    def _init_(self, max_torque_ice, max_torque_electric, max_power_ice, max_power_electric, rpm_range_ice, rpm_range_electric):
+    def __init__(self, max_torque_ice, max_torque_electric, max_power_ice, max_power_electric, rpm_range_ice, rpm_range_electric):
         self.max_torque_ice = max_torque_ice  # ICE için maksimum tork (Nm)
         self.max_torque_electric = max_torque_electric  # Elektrikli motor için maksimum tork (Nm)
         self.max_power_ice = max_power_ice  # ICE için maksimum güç (kW)
